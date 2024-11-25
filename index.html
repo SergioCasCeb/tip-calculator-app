@@ -8,15 +8,76 @@
   
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Fontawesome icons -->
+  <script src="https://kit.fontawesome.com/d66d421276.js" crossorigin="anonymous"></script>
+
+  <!-- CSS styling -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- JS scripts -->
+  <script src="/js/main.js" defer></script>
+  
 </head>
 <body>
+  <main>
+    <div class="container">
+      <h1>SPLI<br>TTER</h1>
+      <form action="#" class="calculator" id="calculator">
+        <div class="calculator__inputs">
+          <div class="form-section">
+            <label for="bill">Bill</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-dollar-sign"></i>
+              <input type="number" min="0" name="bill" class="bill" id="amount-bill" placeholder="0">
+            </div>
+            <span class="error-msg" id="bill-error-msg">Can't be 0</span>
+          </div>
 
-  Bill
+          <div class="form-section">
+            <label for="tips">Select Tip %</label>
+            <div class="tips">
+              <input type="radio" name="tips" class="tip tip-option" data-tip-amount="5" value="5">
+              <input type="radio" name="tips" class="tip tip-option" data-tip-amount="10" value="10">
+              <input type="radio" name="tips" class="tip tip-option" data-tip-amount="15" value="15">
+              <input type="radio" name="tips" class="tip tip-option" data-tip-amount="25" value="25">
+              <input type="radio" name="tips" class="tip tip-option" data-tip-amount="50" value="50">
+              <input type="number" min="0" name="tips" class="tip" id="custom-tip" placeholder="Custom">
+            </div>
+          </div>
+
+          <div class="form-section">
+            <label for="people">Number of People</label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-user-group"></i>
+              <input type="number" min="0" step="1" name="people" id="amount-people" placeholder="0">
+            </div>
+            <span class="error-msg" id="people-error-msg"></span>
+          </div>
+        </div>
+
+        <div class="calculator__results">
+          <div class="results-wrapper">
+            <div class="result">
+              <div class="result__label">Tip Amount <span>/ person</span></div>
+              <div class="result__number">$<span id="tip-amount">0.00</span></div>
+            </div>
+            <div class="result">
+              <div class="result__label">Total <span>/ person</span></div>
+              <div class="result__number">$<span id="tip-total">0.00</span></div>
+            </div>
+          </div>
+          <button type="reset" class="btn btn--reset" id="reset-btn" disabled>RESET</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Bill
 
   Select Tip %
   5%
@@ -34,11 +95,15 @@
   Total
   / person
 
-  Reset
+  Reset -->
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer>
+    <div class="container">
+      <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://www.frontendmentor.io/profile/SergioCasCeb">Sergio Eduardo Castro Ceballos</a>.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
