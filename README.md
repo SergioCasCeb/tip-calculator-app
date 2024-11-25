@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor Solution](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/responsive-tip-calculator-app-with-scss-and-js-SojNYM-pNW)
 - Live Site URL: [Netlify](https://fm-tip-calculator-app-challenge.netlify.app/)
 
 ## My process
