@@ -298,6 +298,7 @@ footer a {
   align-items: center;
   justify-content: flex-start;
   gap: var(--sp-32);
+  box-shadow: 0 4px 6px -4px rgba(15, 23, 42, 0.05), 0 10px 15px -3px rgba(15, 23, 42, 0.05);
   transition: border-radius 250ms ease-in-out;
 }
 .calculator > * {

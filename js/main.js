@@ -145,7 +145,7 @@ function isPeopleValid() {
 
     if (amountPeopleInput.value === '' || Number(amountPeopleInput.value) <= 0 || Number(amountPeopleInput.value) % 1 !== 0) {
         isPeopleValid = false;
-        showPeopleErrorMessage();
+        showPeopleErrorMessage(Number(amountPeopleInput.value));
     } else {
         isPeopleValid = true;
         hidePeopleErrorMessage();
@@ -163,7 +163,7 @@ function isBillAmountValid() {
 
     if (amountBillInput.value === '' || Number(amountBillInput.value) <= 0) {
         isBillAmountValid = false;
-        showBillErrorMessage();
+        showBillErrorMessage(Number(amountBillInput.value));
     } else {
         isBillAmountValid = true;
         hideBillErrorMessage();
@@ -195,9 +195,15 @@ amountBillInput.addEventListener('input', () => {
 /**
  * Show the bill amount input error message
  */
-function showBillErrorMessage() {
+function showBillErrorMessage(value) {
     billInputError.classList.add('show');
-    billInputError.textContent = 'Can\'t be zero';
+    if(value === 0) {
+        billInputError.textContent = 'Can\'t be zero';
+    } else if (value < 0) {
+        billInputError.textContent = 'Can\'t be minus';
+    } else {
+        billInputError.textContent = 'Invalid amount';
+    }
     amountBillInput.classList.add('invalid');
 }
 
@@ -221,18 +227,19 @@ amountPeopleInput.addEventListener('input', () => {
 /**
  * Show the bill amount input error message
  */
-function showPeopleErrorMessage() {
+function showPeopleErrorMessage(value) {
 
-    if (Number(amountPeopleInput.value) % 1) {
-        amountPeopleError.classList.add('show');
-        amountPeopleError.textContent = 'No decimals';
-        amountPeopleInput.classList.add('invalid');
-    }
-    else {
-        amountPeopleError.classList.add('show');
+    amountPeopleError.classList.add('show');
+    if (value % 1) {
+        amountPeopleError.textContent = 'Can\'t be decimal';
+    } else if (value === 0) {
         amountPeopleError.textContent = 'Can\'t be zero';
-        amountPeopleInput.classList.add('invalid');
+    } else if (value < 0) {
+        amountPeopleError.textContent = 'Can\'t be minus';
+    } else {
+        amountPeopleError.textContent = 'Invalid value';
     }
+    amountPeopleInput.classList.add('invalid');
 }
 
 /**
